@@ -20,17 +20,17 @@ namespace KennelSoftware
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<string> list = new List<string>();
+        //Enums enums = new Enums();
+        List<Animal> boardedAnimals = new List<Animal>();
 
         public MainWindow()
         {
             InitializeComponent();
-            list.Add("Evan");
-            list.Add("Ethan");
-            list.Add("Joseph");
-            list.Add("Nathan");
-            list.Add("Nut");
-            ListViewThing.ItemsSource = list;
+            boardedAnimals.Add(new Animal("Mafia", Enums.sex.Male, Enums.dogBreed.Cane_Corso, false, (float)13.5));
+            boardedAnimals.Add(new Animal("Sasha", Enums.sex.Spayed, Enums.dogBreed.Labrador_Retriever, true, (float)10.8));
+            boardedAnimals.Add(new Animal("Ben", Enums.sex.Male, Enums.dogBreed.Great_Dane, false, (float)2.2));
+            boardedAnimals.Add(new Animal("Mikey", Enums.sex.Neutered, Enums.dogBreed.Labrador_Retriever, false, (float)3.5));
+            ListViewThing.ItemsSource = boardedAnimals;
         }
 
         private void LogoutMenuItem_Click(object sender, RoutedEventArgs e)
@@ -57,12 +57,12 @@ namespace KennelSoftware
 
         private void AutoCompleteSearch(object sender, TextChangedEventArgs e)
         {
-            List<string> temp = new List<string>();
-            foreach (string i in list)
+            List<Animal> temp = new List<Animal>();
+            foreach (Animal i in boardedAnimals)
             {
-                if (i.Length >= SearchTB_RetAni.Text.Length)
+                if (i.getAnimalName().Length >= SearchTB_RetAni.Text.Length)
                 {
-                    if (i.Substring(0, SearchTB_RetAni.Text.Length).ToLower() == SearchTB_RetAni.Text.ToLower())
+                    if (i.getAnimalName().Substring(0, SearchTB_RetAni.Text.Length).ToLower() == SearchTB_RetAni.Text.ToLower())
                     {
                         temp.Add(i);
                     }
