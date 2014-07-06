@@ -26,10 +26,10 @@ namespace KennelSoftware
         public MainWindow()
         {
             InitializeComponent();
-            boardedAnimals.Add(new Animal("Mafia", Enums.sex.Male, Enums.dogBreed.Cane_Corso, false, (float)13.5));
-            boardedAnimals.Add(new Animal("Sasha", Enums.sex.Spayed, Enums.dogBreed.Labrador_Retriever, true, (float)10.8));
-            boardedAnimals.Add(new Animal("Ben", Enums.sex.Male, Enums.dogBreed.Great_Dane, false, (float)2.2));
-            boardedAnimals.Add(new Animal("Mikey", Enums.sex.Neutered, Enums.dogBreed.Labrador_Retriever, false, (float)3.5));
+            boardedAnimals.Add(new Dog("Mafia", Enums.sex.Male, Enums.dogBreed.Cane_Corso, false, (float)13.5));
+            boardedAnimals.Add(new Dog("Sasha", Enums.sex.Spayed, Enums.dogBreed.Labrador_Retriever, true, (float)10.8));
+            boardedAnimals.Add(new Dog("Ben", Enums.sex.Male, Enums.dogBreed.Great_Dane, false, (float)2.2));
+            boardedAnimals.Add(new Dog("Mikey", Enums.sex.Neutered, Enums.dogBreed.Labrador_Retriever, false, (float)3.5));
             ListViewThing.ItemsSource = boardedAnimals;
         }
 
@@ -88,6 +88,16 @@ namespace KennelSoftware
             TextBox tb = (TextBox)sender;
             tb.Text = "Search by last name...";
             tb.GotFocus += BoardReleaseSearchTB_GotFocus;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MenuExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

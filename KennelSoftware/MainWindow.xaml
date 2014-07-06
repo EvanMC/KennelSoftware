@@ -49,7 +49,7 @@
             <MenuItem Header="Menu">
                 <MenuItem Header="Login" HorizontalAlignment="Left" Width="145"/>
                 <MenuItem Header="Logout" HorizontalAlignment="Left" Width="145" Click="LogoutMenuItem_Click"/>
-                <MenuItem Header="Exit" HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="Exit" HorizontalAlignment="Left" Width="145" Click="MenuExit_Click"/>
             </MenuItem>
             <MenuItem Header="Options"/>
             <MenuItem Header="Help"/>

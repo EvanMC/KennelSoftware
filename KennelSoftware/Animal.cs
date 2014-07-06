@@ -8,21 +8,11 @@ namespace KennelSoftware
 {
     class Animal
     {
-        private string name;
-        //private Enums.dogBreed breed;
-        private Enums.sex sex;
-        private float age;
-        private bool mixed_breed;
-
-        public Animal(string name, Enums.sex sex, bool mixed_breed, float age)
-        {
-            this.name = name;
-            this.sex = sex;
-            //this.breed = breed;
-            this.mixed_breed = mixed_breed;
-            this.age = age;
-        }
-
+        protected string name { get; set; }
+        protected Enums.sex sex { get; set; }
+        protected float age { get; set; }
+        protected bool mixed_breed { get; set; }
+        
         public override string ToString()
         {
             return this.name;
@@ -30,27 +20,22 @@ namespace KennelSoftware
 
         public string getAnimalName()
         {
-            return this.name;
+            return name;
         }
-
-        /*public Enums.dogBreed getAnimalBreed()
-        {
-            return this.breed;
-        }*/
 
         public bool isMixedBreed()
         {
-            return this.mixed_breed;
+            return mixed_breed;
         }
 
         public Enums.sex getAnimalSex() 
         {
-            return this.sex;
+            return sex;
         }
 
         public float getAnimalAge()
         {
-            return this.age;
+            return age;
         }
     }
 }

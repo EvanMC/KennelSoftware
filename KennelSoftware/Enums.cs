@@ -8,11 +8,6 @@ namespace KennelSoftware
 {
     class Enums
     {
-        public Enums()
-        {
-
-        }
-
         public enum sex
         {
             Male,
